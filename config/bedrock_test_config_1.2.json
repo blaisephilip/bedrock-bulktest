@@ -1,0 +1,9 @@
+{
+    "aws_region": "eu-central-1",
+    "anthropic_version": "bedrock-2023-05-31",
+    "max_tokens": 4096,
+    "temperature": 0.8,
+    "conditioner_prompt_path": "..\\scenarios\\conditioners\\1.1-Professional Cook.md",
+    "design_prompt_path": "..\\scenarios\\design_prompts\\1.1-1.1-Easy-dinner.md",
+    "result_path" : "..\\results\\aut\\boto3\\claude_3.5_sonnet"
+}

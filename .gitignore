@@ -1,0 +1,13 @@
+# Log file
+*.log
+
+# Temporary files
+temp
+
+aut/boto3/.ipynb_checkpoints/
+aut/boto3/.venv
+__pycache__
+.ipynb_checkpoints
+.venv
+results
+
