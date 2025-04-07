@@ -8,7 +8,8 @@ The results can be evaluated by a human reviewer to check if the quality require
 
 ## Prerequisites
 
-The recommended toolchain to view the repository's content: [doc/environment.md](doc/environment.md)
+The recommended, tested toolchain to use the repository's content: [doc/environment.md](doc/environment.md)  
+Please set up the accounts and tools before proceeding.  
 
 ## Application
 

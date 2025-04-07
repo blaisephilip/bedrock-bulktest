@@ -1,8 +1,8 @@
 # Local development environment setup
 
-1. Install Visual Studio Code (VSCode) and a Java Runtime Environment.
+1. Install Visual Studio Code (VSCode) and a Python release. (tested: Python 3.11.8)
 <https://code.visualstudio.com/>  
-<https://www.java.com/en/download/manual.jsp>
+<https://www.python.org/downloads/windows/>
 
 2. Open the repository folder.
 
@@ -10,12 +10,13 @@
 
 + Markdown Preview Enhanced by Yiyi Wang
 
+4. Install the AWS CLI (Comman Line Interface) from here: [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
 ## AWS Account connection setup
 
 1. If you do not have any, create an AWS root and an AWS IAM account, according to the guidelines of Amazon Web Services.  
 
-2. Install the AWS CLI (Comman Line Interface) from here: [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-3. Log in with your IAM user account to AWS in a web browser, and create an access key in the AWS Management Console.
+2. Log in with your IAM user account to AWS in a web browser, and create an access key in the AWS Management Console.
 
 IAM > Users > your_username > Create access key  
 
@@ -48,7 +49,7 @@ The AWS account connection is set up.
 
 1. Configure an AWS Bedrcock agent. In case of some models, you need to create a request for it.
 
-2. Adjust the key policy. Add this to the Statement array:  
+2. Adjust the key policy. Add this to the Statement array of the policy:  
 
 ```code
 {
@@ -68,7 +69,7 @@ The AWS account connection is set up.
     }
 ```
 
-3. Create a config file or adjust the existing ones in the config folder.
+3. Create a configuration file or adjust the existing ones in the config folder.
 
 Example configuration:  
 
