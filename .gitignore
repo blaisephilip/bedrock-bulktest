@@ -11,3 +11,5 @@ __pycache__
 .venv
 results
 
+node_modules
+package-lock.json

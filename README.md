@@ -37,4 +37,4 @@ Create the following files:
 2. Main command prompt (Markdown).  
 3. Configuration file (JSON) with paths to the prompt files.
 
-Agent responses are recorded in the response folder in Markdown format.  
+Agent responses are recorded in the response folder in Markdown format. The response is also converted to PDF by the client, if the setup of working environment is complete on your workstation.  

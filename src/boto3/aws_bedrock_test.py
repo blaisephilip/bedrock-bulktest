@@ -8,6 +8,7 @@ from common.modelAccess import get_foundation_model, list_foundation_models
 from common.config_reader import read_config
 from common.file_reader import read_file_content
 from common.markdown_writer import append_to_markdown, write_to_markdown
+from md2pdf.execute_node_command import execute_node_command
 
 def invokeClient(model_id,client,request):
     try:
@@ -125,6 +126,22 @@ def runTimeTest(agent_id,
     print(f"Response from {model_id} is saved to {responseFilePath}")
     print("=" * 68)
 
+    pdfPath = Path(responseFilePath)    
+    strPdfPath = str(pdfPath.with_suffix('.pdf'))
+    print(f"Markdown file path: {responseFilePath}")
+    print(f"PDF file path: {strPdfPath}")
+    conversionCommand = "node boto3/md2pdf/markdownToPdf.js" \
+                    + " " + str(pdfPath) + " " + strPdfPath 
+
+    return_code, stdout, stderr = execute_node_command(conversionCommand)
+
+    if return_code == 0:
+        print("Node command executed successfully.")
+        print("Output:", stdout)
+    else:
+        print("Node command failed with error code:", return_code)
+        print("Error:", stderr)
+
 def agentCheck(region_name):
     region = region_name
     print("=" * 68)    
@@ -234,6 +251,7 @@ def performConfigBasedTest(config_path):
     print("=" * 68)
 
 if __name__ == "__main__":
+    
     start_time = time.time()
     config_dir = Path("../config")
     
@@ -245,7 +263,7 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Error processing {config_file}: {e}")
             continue
-
     end_time = time.time()
     duration = end_time - start_time
     print(f"\nTotal execution time: {duration:.2f} seconds")
+

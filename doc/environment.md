@@ -1,12 +1,12 @@
 # Local development environment setup
 
-1. Install Visual Studio Code (VSCode) and a Python release. (tested: Python 3.11.8)
+1. Install Visual Studio Code (VSCode) and a Java Runtime Environment.
 <https://code.visualstudio.com/>  
-<https://www.python.org/downloads/windows/>
+<https://www.java.com/en/download/manual.jsp>  
 
 2. Open the repository folder.
 
-3. Install the following extension in VSCode:  
+3. Install the following extensions in VSCode:  
 
 + Markdown Preview Enhanced by Yiyi Wang
 
@@ -16,7 +16,9 @@
 
 1. If you do not have any, create an AWS root and an AWS IAM account, according to the guidelines of Amazon Web Services.  
 
-2. Log in with your IAM user account to AWS in a web browser, and create an access key in the AWS Management Console.
+2. Install the AWS CLI (Comman Line Interface) from here: [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+3. Log in with your IAM user account to AWS in a web browser, and create an access key in the AWS Management Console.
 
 IAM > Users > your_username > Create access key  
 
@@ -93,6 +95,9 @@ Example configuration:
 + main_prompt_path: Path of the main user prompt entries.
 + result_path: Path where the final prompt feedback shall be stored in Markdown format.  
 
+4. Test the access by running the following file:  
+[../src/boto3/aws_bedrock_test.py](../src/boto3/aws_bedrock_test.py)
+
 ## Setup boto3 client
 
 1. Open a terminal. Navigate to the cloned repository's src directory.  
@@ -103,6 +108,20 @@ Example configuration:
 
 ```code
 pip install boto3
+```
+
+## Node project setup
+
+1. Create and open the following directory in a terminal:
+
+```code
+src/boto3/md2pdf  
+```
+
+2. Execute the following to install Puppeteer:  
+
+```code
+npm install puppeteer marked highlight.js plantuml-encoder
 ```
 
 ## Optional: using a virtual environment for Python
